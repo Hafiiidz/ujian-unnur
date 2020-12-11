@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2020 at 02:05 PM
+-- Generation Time: Dec 11, 2020 at 12:19 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -391,6 +391,7 @@ CREATE TABLE `tbl_jawab_essay` (
   `id_paket_soal` varchar(25) NOT NULL,
   `id_soal_essay` bigint(20) NOT NULL,
   `jawaban_essay` text DEFAULT NULL,
+  `jawab_file` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -431,7 +432,8 @@ CREATE TABLE `tbl_kategori_soal` (
 
 INSERT INTO `tbl_kategori_soal` (`id_kategori_soal`, `nama_kategori_soal`, `created_at`, `updated_at`) VALUES
 ('KAT001', 'Soal PMB', '2020-11-08 20:14:41', '2020-11-08 20:14:41'),
-('KAT002', 'Soal UTS', '2020-11-09 00:34:34', '2020-11-09 00:34:34');
+('KAT002', 'Soal UTS', '2020-11-09 00:34:34', '2020-11-09 00:34:34'),
+('KAT003', 'Soal UAS', '2020-11-19 19:37:44', '2020-11-19 19:37:44');
 
 -- --------------------------------------------------------
 
@@ -932,31 +934,31 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=409;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=414;
 
 --
 -- AUTO_INCREMENT for table `tbl_filter_kelas`
 --
 ALTER TABLE `tbl_filter_kelas`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=540;
 
 --
 -- AUTO_INCREMENT for table `tbl_jawab_essay`
 --
 ALTER TABLE `tbl_jawab_essay`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
 
 --
 -- AUTO_INCREMENT for table `tbl_jawab_pg`
 --
 ALTER TABLE `tbl_jawab_pg`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id_nilai` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_nilai` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengaturan`
@@ -968,25 +970,25 @@ ALTER TABLE `tbl_pengaturan`
 -- AUTO_INCREMENT for table `tbl_role_soal`
 --
 ALTER TABLE `tbl_role_soal`
-  MODIFY `id_role_soal` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_role_soal` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tbl_soal`
 --
 ALTER TABLE `tbl_soal`
-  MODIFY `id_soal` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_soal` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `tbl_soal_essay`
 --
 ALTER TABLE `tbl_soal_essay`
-  MODIFY `id_soal_essay` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_soal_essay` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=653;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=658;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
