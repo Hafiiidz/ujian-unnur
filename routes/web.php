@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('/ubah_password/{id}','DashboardController@changepassword')->name('ganti.password');
 
 
 Route::get('/home', 'DashboardController@index')->middleware('auth');
@@ -81,14 +82,15 @@ Route::get('/dash','DashboardController@index')->middleware('auth');
      Route::post('/dosen/laporan/list-mhs/detail-mhs/update_nilai','LaporanController@confirm_nilai')->name('post.nilai');
 
 //prodi
-    //filter-soal     
+    //filter-soal
     Route::get('prodi/filter-soal','ProdiController@index');
     Route::get('/prodi/filter-soal/{id}','ProdiController@tampil_filter')->name('show.filter-soal');
     Route::get('/prodi/filter-soal/update_status/{username}/{id_soal}','ProdiController@update_status')->name('update.status_ujian');
     Route::post('/prodi/filter-soal/get-filter','ProdiController@get_filter')->name('get.filter');
-    Route::get('/prodi/filter-soal/get-filter-nim','SoalController@get_filter_nim')->name('get.filter_nim');       
+    Route::get('/prodi/filter-soal/get-filter-nim','SoalController@get_filter_nim')->name('get.filter_nim');
 //mhs
     //ujian
     Route::get('/mhs/ujian','MhsController@index_ujian');
     Route::get('/mhs/ujian/show_ujian/{id}','MhsController@tampil_ujian')->name('show.ujian');
-    Route::post('/mhs/ujian/show_ujian/cek_jawaban','MhsController@cek_jawaban')->name('cek.jawaban');         
+    Route::post('/mhs/ujian/show_ujian/cek_jawaban','MhsController@cek_jawaban')->name('cek.jawaban');
+

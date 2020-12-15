@@ -43,11 +43,9 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-
         $user = User::where('username', $request->username)
         ->where('password',md5($request->password))
         ->first();
-
 
         if(!empty($user)){
             Auth::login($user);
@@ -55,6 +53,16 @@ class LoginController extends Controller
         }else{
             return redirect('/login');
         }
+
+        // if(auth()->attempt(['username' => $request->username, 'password' => $request->password])){
+        //     if (!empty($user)) {
+        //         Auth::login(($user));
+        //     }
+        //     return redirect()->intended('/dash');
+        // }
+        return redirect()->back()->with(['error' => 'password Invalid / Inactive Users']);
+
+
     }
 
     public function logout(){
